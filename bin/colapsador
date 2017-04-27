@@ -1,0 +1,19 @@
+#! /usr/local/bin/awk -f
+
+BEGIN{
+	FS=","
+	CROM=4
+	POS=5
+	SEC=3
+}
+
+$CROM == crom && $POS == pos && $SEC == sec {
+	next
+}
+
+{
+	crom = $CROM
+	pos = $POS
+	sec = $SEC
+	print
+}
